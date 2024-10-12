@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enviroplus-exporter"
+version = "1.0.0"
+description = "Exporter for measurements from Enviro + Air Quality board"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["enviroplus", "exporter", "enviroplus-exporter"]
+authors = [
+  {name = "Michał Krasoń"}
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: No Input/Output (Daemon)",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3"
+]
+dependencies = [
+  "enviroplus",
+  "prometheus-client"
+]
+
+[project.scripts]
+enviroplus-exporter = "enviroplus_exporter:main"
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "isort",
+  "mypy",
+  "pip-tools",
+  "pre-commit"
+]
+
+[tool.mypy]
+mypy_path = "stubs"

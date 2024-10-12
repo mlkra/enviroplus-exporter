@@ -1,0 +1,7 @@
+[Unit]
+Description=enviroplus-exporter
+[Service]
+Restart=on-failure
+ExecStart=/opt/enviroplus-exporter/.venv/bin/python3 /opt/enviroplus-exporter/src/enviroplus_exporter.py
+[Install]
+WantedBy=multi-user.target
